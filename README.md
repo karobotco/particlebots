@@ -1,2 +1,2 @@
 # particlebots
-It's mi thesis :) of robotics engineering
+My thesis :) of robotics engineering
