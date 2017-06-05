@@ -5,7 +5,6 @@
 // Utadeo
 
 // Note: Based in an public example of light sensor TSL2561
-// Hey Olmer!
 // Libraries
 #include <Wire.h>
 #include "TSL2561.h"
@@ -34,6 +33,7 @@ void setup(void) {
   //tsl.setTiming(TSL2561_INTEGRATIONTIME_402MS);  // Longest integration time (dim light)
 }
 
+// Loop
 void loop(void) {
   // Reading
   //uint16_t x = tsl.getLuminosity(TSL2561_VISIBLE);     
