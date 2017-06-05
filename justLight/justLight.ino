@@ -2,6 +2,7 @@
 // Karolina Ladino Puerto
 // Thesis of Automation Engineering
 // June 2017 V1.0
+// Utadeo
 
 // Note: Based in an public example of light sensor TSL2561
 
