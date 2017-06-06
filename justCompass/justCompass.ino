@@ -4,7 +4,8 @@
 // June 2017 V1.0
 // Utadeo
 
-// Note: Based in an public example of light sensor TSL2561
+// Note: Based in an public example of MPU 9250 Possible version one
+// Working only in Arduino uno
 // Libraries
 #include <Wire.h>
 #include "i2c.h"
