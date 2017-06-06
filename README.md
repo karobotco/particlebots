@@ -6,3 +6,6 @@ Olmer Garcia https://github.com/olmerg
 
 ## My university is: 
 Bogotá university Jorge Tadeo Lozano 
+
+### My email is:
+ladinokarolina@gmail.com
