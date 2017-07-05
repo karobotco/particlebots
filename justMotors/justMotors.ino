@@ -8,54 +8,59 @@
 // Libraries
 #include "WEMOS_Motor.h"
 
-// Variables
 int pwm;
 
-// Motor shiled I2C Address: 0x30
-// PWM frequency: 1000Hz(1kHz)
-Motor M1(0x30,_MOTOR_A, 1000); // Motor A
-Motor M2(0x30,_MOTOR_B, 1000); // Motor B
 
-// Setup
+//Motor shiled I2C Address: 0x30
+//PWM frequency: 1000Hz(1kHz)
+Motor M1(0x30, _MOTOR_A, 1000); //Motor A
+Motor M2(0x30,_MOTOR_B, 1000);//Motor B
+
+
+
 void setup() {
-  Serial.begin(250000);
+  Serial.begin(19200);
 }
-
-// Loop
+int i=0;
 void loop() {
 
-  for (pwm = 0; pwm <= 100; pwm++)
+  for (pwm = 40; pwm <= 100; pwm++)
   {
-    M1.setmotor( _CW, pwm);
-    M2.setmotor(_CW, 100-pwm);
-    Serial.printf("A:%d%, B:%d%, DIR:CW\r\n", pwm,100-pwm);
-  }
-  
-  M1.setmotor(_STOP);
-  M2.setmotor( _STOP);
-  Serial.println("Motor A&B STOP");
-  delay(200);
-  
-  for (pwm = 0; pwm <=100; pwm++)
-  {
-    M1.setmotor(_CCW, pwm);
-    M2.setmotor(_CCW, 100-pwm);
-    Serial.printf("A:%d%, B:%d%, DIR:CCW\r\n", pwm,100-pwm);
-  }
- 
-  M1.setmotor(_STOP);
-  M2.setmotor( _STOP);
-  delay(200);
-  Serial.println("Motor A&B STOP");
+    if(i==0){
+    i=1;
+        M1.setmotor( _CW, pwm);
+        M2.setmotor(_CCW, pwm);
+    }
+    else{
+    i=0;
+        M1.setmotor( _CCW, pwm);
+        M2.setmotor(_CW, pwm);
+    }
 
-  M1.setmotor(_SHORT_BRAKE);
-  M2.setmotor( _SHORT_BRAKE);
-  Serial.println("Motor A&B SHORT BRAKE");  
-  delay(1000);
-  
-  M1.setmotor(_STANDBY); // Both Motor standby
-  M2.setmotor( _STANDBY);
-  Serial.println("Motor A&B STANDBY");  
-  delay(1000);
-  
+    Serial.printf("A:%d%, B:%d%, DIR:CW\r\n", pwm, 100 - pwm);
+    delay(500);
+    M1.setmotor(_STANDBY);
+    M2.setmotor( _STANDBY);
+    Serial.println("Motor A STANDBY");
+    delay(100);
+  }
+
 }
+
+void car_front(int speed){
+  M1.setmotor( _CW, speed);
+  M2.setmotor(_CW, speed);
+  }
+
+  void car_reverse(int speed){
+  M1.setmotor( _CCW, speed);
+  M2.setmotor(_CCW, speed);
+  }
+  void car_CW(int speed){
+  M1.setmotor( _CCW, speed);
+  M2.setmotor(_CW, speed);
+  }
+  void car_CCW(int speed){
+  M1.setmotor( _CW, speed);
+  M2.setmotor(_CCW, speed);
+  }
