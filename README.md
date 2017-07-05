@@ -2,10 +2,10 @@
 My thesis :) of robotics engineering
 
 ## My super advisor is: 
-[Olmer Garcia] (github.com/olmerg)
+[Olmer Garcia](github.com/olmerg)
 
 ## My university is: 
-[Bogot· university Jorge Tadeo Lozano] (utadeo.edu.co)
+Bogot√° [university Jorge Tadeo Lozano](utadeo.edu.co)
 
 ### My email is:
-[ladinokarolina@gmail.com] (@karoladino)
+ladinokarolina@gmail.com (@karoladino)
